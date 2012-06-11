@@ -1,0 +1,44 @@
+body {
+	background-color: #f7e3a8;
+	font-family: "Comic Sans MS";
+	color: #808080;
+}
+
+.clear {
+	clear: both;
+}
+
+#item {
+	display: block;
+	width: 250px;
+	float: left;
+	padding: 10px;
+	border: 1px solid;
+}
+
+#item_edit {
+	display: block;
+	width: 125px;
+	float: left;
+	padding: 10px;
+	border: 1px solid;
+}
+
+div#content {
+	margin: 10px 25% 20px;
+	width: 820px;
+	padding: 20px;
+	background-color: #FDD866;
+}
+
+div#content *#info{
+	border-top: 1px solid;
+	border-bottom: 1px double;
+}
+
+div#navigator{
+	margin: 10px 25% 20px;
+	padding: 20px;
+	width: 820px;
+	background-color: #FDD866;
+}

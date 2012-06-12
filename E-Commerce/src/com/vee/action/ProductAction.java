@@ -7,6 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.vee.model.Image;
 import com.vee.model.Product;
 import com.vee.services.GenericService;
+import com.vee.services.ServiceBundle;
 
 public class ProductAction extends ActionSupport {
 	/**
@@ -14,11 +15,20 @@ public class ProductAction extends ActionSupport {
 	 */
 	private static final long serialVersionUID = 6965077850339261446L;
 	private GenericService<Product> productService;
+//	private GenericService<Image> imageService;
+//	private GenericService<Category> categoryService;
 	private List<Product> listProduct;
-	private Product inputProduct = new Product();
+	private Product inputProduct;
 	private String inputImages;
 	private int id_del;
 
+	public ProductAction(ServiceBundle serviceBundle) {
+		// TODO Auto-generated constructor stub
+		productService = serviceBundle.getProductService();
+//		imageService = serviceBundle.getImageService();
+//		categoryService = serviceBundle.getCategoryService();
+	}
+	
 	public int getId_del() {
 		return id_del;
 	}
@@ -70,9 +80,11 @@ public class ProductAction extends ActionSupport {
 			Image i = new Image();
 			i.setImg_url(str);
 			i.setProduct(inputProduct);
-			
+			images.add(i);
 		}
+		inputProduct.setImages(images);
 		productService.save(inputProduct);
+		inputProduct = new Product();
 		return SUCCESS;
 	}
 

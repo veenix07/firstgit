@@ -6,6 +6,17 @@
 	<bean id="productService" class="com.vee.services.ProductService">
 		<property name="productDAO" ref="productDAO" />
 	</bean>
+	<bean id="imageService" class="com.vee.services.ImageService">
+		<property name="imageDAO" ref="imageDAO" />
+	</bean>
+	<bean id="categoryService" class="com.vee.services.CategoryService">
+		<property name="categoryDAO" ref="categoryDAO" />
+	</bean>
+	<bean id="serviceBundle" class="com.vee.services.ServiceBundle">
+		<property name="productService" ref="productService" />
+		<property name="imageService" ref="imageService" />
+		<property name="categoryService" ref="categoryService" />
+	</bean>
 	<!-- <bean id="imageService" class="com.vee.services.ImageService"> <property 
 		name="imageDAO" ref="imageDAO" /> </bean> <bean id="categoryService" class="com.vee.services.CategoryService"> 
 		<property name="categoryDAO" ref="categoryDAO" /> </bean> -->

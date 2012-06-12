@@ -13,7 +13,7 @@
 			<tr>
 				<td>Product Code</td>
 				<td>:</td>
-				<td><s:textfield name="inputProduct.productCode" /></td>
+				<td><s:textfield name="inputProduct.productCode"   onkeyup="this.value=this.value.toUpperCase()"/></td>
 			</tr>
 			<tr>
 				<td>Product Description</td>

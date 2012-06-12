@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-${header['User-Agent'] }
-<%= request.getRemoteAddr() %>
+	<c:redirect url="/index.html"/>
 </body>
 </html>

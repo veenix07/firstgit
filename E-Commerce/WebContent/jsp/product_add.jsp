@@ -13,7 +13,14 @@
 			<tr>
 				<td>Product Code</td>
 				<td>:</td>
-				<td><s:textfield name="inputProduct.productCode"   onkeyup="this.value=this.value.toUpperCase()"/></td>
+				<td><s:textfield name="inputProduct.productCode"
+						onkeyup="this.value=this.value.toUpperCase()" /></td>
+			</tr>
+			<tr>
+				<td>Product Category</td>
+				<td>:</td>
+				<td><s:select name="categoryId" list="listCategory" headerKey="-1"
+						headerValue="- Please Select Category -" listKey="id" listValue="categoryName"/></td>
 			</tr>
 			<tr>
 				<td>Product Description</td>

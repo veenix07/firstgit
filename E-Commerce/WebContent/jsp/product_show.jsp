@@ -14,6 +14,7 @@
 				<td><s:property value="productCode" /></td>
 				<td><s:property value="productDesc" /></td>
 				<td><s:property value="productPrice" /></td>
+				<td><s:iterator value="images"><s:property value="img_url"/>;</s:iterator></td>
 				<!-- <td><a href="product_delete.html?id_del=${id }">Delete</a></td> -->
 			</tr>
 		</s:iterator>

@@ -17,7 +17,7 @@
 		<action name="index" class="productAction">
 			<result name="success">jsp/product_show.jsp</result>
 		</action>
-		<action name="product_add_form" class="productAction">
+		<action name="product_add_form" class="productAction" method="product_add_form">
 			<result name="success">jsp/product_add.jsp</result>
 		</action>
 		<action name="product_add" class="productAction" method="product_add">

@@ -19,31 +19,32 @@ public class CategoryService implements GenericService<Category> {
 	@Override
 	public void save(Category entity) {
 		// TODO Auto-generated method stub
-
+		getCategoryDAO().save(entity);
 	}
 
 	@Override
 	public Category getEntity(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return getCategoryDAO().findByID(id);
 	}
 
 	@Override
 	public void update(Category entity) {
 		// TODO Auto-generated method stub
-
+		getCategoryDAO().save(entity);
 	}
 
 	@Override
 	public void delete(int id) {
 		// TODO Auto-generated method stub
-
+		getCategoryDAO().delete(getCategoryDAO().findByID(id));
 	}
 
 	@Override
 	public List<Category> getList() {
 		// TODO Auto-generated method stub
-		return null;
+		System.out.println(getCategoryDAO().findAll().size());
+		return getCategoryDAO().findAll();
 	}
 
 }

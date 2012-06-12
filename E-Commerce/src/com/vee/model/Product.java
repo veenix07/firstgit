@@ -36,7 +36,7 @@ public class Product {
 	}
 
 	@OneToOne
-	@JoinColumn(name="category_id")
+	@JoinColumn(name = "category_id")
 	public Category getCategory() {
 		return category;
 	}
@@ -52,10 +52,13 @@ public class Product {
 
 	public void setImages(List<Image> images) {
 		this.images = images;
+		if (images.size() > 0 && this.getCoverImage() == null) {
+			this.setCoverImage(images.get(0));
+		}
 	}
 
 	@OneToOne
-	@JoinColumn(name="image_id")
+	@JoinColumn(name = "image_id")
 	public Image getCoverImage() {
 		return coverImage;
 	}

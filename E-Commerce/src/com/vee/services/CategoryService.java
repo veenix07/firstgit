@@ -43,7 +43,6 @@ public class CategoryService implements GenericService<Category> {
 	@Override
 	public List<Category> getList() {
 		// TODO Auto-generated method stub
-		System.out.println(getCategoryDAO().findAll().size());
 		return getCategoryDAO().findAll();
 	}
 

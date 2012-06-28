@@ -13,12 +13,26 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
 
-	<package name="E-Commerce" namespace="/" extends="struts-default">
+	<package name="E-Commerce" extends="struts-default" namespace="/">
 		<action name="index" class="productAction">
-			<result name="success">jsp/product_show.jsp</result>
+			<result name="success">
+				/jsp/product_show.jsp
+			</result>
+		</action>
+		<!-- <action name="product_delete" class="productAction" method="product_delete"> 
+			<result name="success" type="redirectAction"> <param name="actionName">index</param> 
+			<param name="namespace">/</param> </result> </action> -->
+	</package>
+	<package name="admin" extends="struts-default" namespace="/admin">
+		<action name="index">
+			<result name="success">
+				/admin/index.jsp
+			</result>
 		</action>
 		<action name="product_add_form" class="productAction" method="product_add_form">
-			<result name="success">jsp/product_add.jsp</result>
+			<result name="success">
+				/admin/product_add.jsp
+			</result>
 		</action>
 		<action name="product_add" class="productAction" method="product_add">
 			<result name="success" type="redirectAction">
@@ -26,9 +40,17 @@
 				<param name="namespace">/</param>
 			</result>
 		</action>
-		<!-- <action name="product_delete" class="productAction" method="product_delete"> 
-			<result name="success" type="redirectAction"> <param name="actionName">index</param> 
-			<param name="namespace">/</param> </result> </action> -->
-			
+		<action name="category_add_form" class="categoryAction" method="category_add_form">
+			<result name="success">
+				/admin/category_add.jsp
+			</result>
+		</action>
+		<action name="category_add" class="categoryAction" method="category_add">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
 	</package>
+
 </struts>

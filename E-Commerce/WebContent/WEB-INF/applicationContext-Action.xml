@@ -4,6 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<import resource="applicationContext-Services.xml" />
 	<bean id="productAction" class="com.vee.action.ProductAction">
-		<constructor-arg ref="serviceBundle"/>
+		<constructor-arg ref="serviceBundle" />
+	</bean>
+	<bean id="categoryAction" class="com.vee.action.CategoryAction">
+		<property name="categoryService" ref="categoryService" />
 	</bean>
 </beans>

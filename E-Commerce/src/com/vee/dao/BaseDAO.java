@@ -57,9 +57,22 @@ public abstract class BaseDAO<T, ID extends Serializable> implements
 	@Override
 	public List<T> findAll() {
 		// TODO Auto-generated method stub
-		log.info(persistenceClass.toString());
 		return (List<T>) getHibernateTemplate().find(
 				"from " + persistenceClass.getName());
+	}
+
+	@Override
+	public List<T> findByColumn(String colName, Object value) {
+		// TODO Auto-generated method stub
+		return (List<T>) getHibernateTemplate().find(
+				"from " + persistenceClass.getName() + " where " + colName
+						+ "=" + value);
+	}
+
+	@Override
+	public List<T> findByColumns(String[] colsName, Object[] values) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

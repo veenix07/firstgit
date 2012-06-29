@@ -46,4 +46,16 @@ public class CategoryService implements GenericService<Category> {
 		return getCategoryDAO().findAll();
 	}
 
+	@Override
+	public List<Category> getListByColumn(String colName, Object value) {
+		// TODO Auto-generated method stub
+		return getCategoryDAO().findByColumn(colName, value);
+	}
+
+	@Override
+	public List<Category> getListByColumns(String[] colsName, Object[] values) {
+		// TODO Auto-generated method stub
+		return getCategoryDAO().findByColumns(colsName, values);
+	}
+
 }

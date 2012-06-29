@@ -12,8 +12,8 @@
 	<div id="content">
 		<s:iterator value="listProduct">
 			<div id="item">
-				<img width="150" height="150"
-					src="<s:property value="coverImage.img_url"/>" />
+				<a href="show_details.html?prod_id=${id }"><img width="150" height="150"
+					src="<s:property value="coverImage.img_url"/>" /></a>
 				<center>
 					<s:property value="productCode" />
 				</center>

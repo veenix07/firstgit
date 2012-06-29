@@ -47,4 +47,16 @@ public class ProductService implements GenericService<Product> {
 		return getProductDAO().findAll();
 	}
 
+	@Override
+	public List<Product> getListByColumn(String colName, Object value) {
+		// TODO Auto-generated method stub
+		return getProductDAO().findByColumn(colName, value);
+	}
+
+	@Override
+	public List<Product> getListByColumns(String[] colsName, Object[] values) {
+		// TODO Auto-generated method stub
+		return getProductDAO().findByColumns(colsName, values);
+	}
+
 }

@@ -19,6 +19,11 @@
 				/jsp/product_show.jsp
 			</result>
 		</action>
+		<action name="show_details" class="productAction" method="showDetails">
+			<result name="success">
+				/jsp/product_detail.jsp
+			</result>
+		</action>
 		<!-- <action name="product_delete" class="productAction" method="product_delete"> 
 			<result name="success" type="redirectAction"> <param name="actionName">index</param> 
 			<param name="namespace">/</param> </result> </action> -->

@@ -46,4 +46,16 @@ public class ImageService implements GenericService<Image> {
 		// TODO Auto-generated method stub
 		return getImageDAO().findAll();
 	}
+
+	@Override
+	public List<Image> getListByColumn(String colName, Object value) {
+		// TODO Auto-generated method stub
+		return getImageDAO().findByColumn(colName, value);
+	}
+
+	@Override
+	public List<Image> getListByColumns(String[] colsName, Object[] values) {
+		// TODO Auto-generated method stub
+		return getImageDAO().findByColumns(colsName, values);
+	}
 }

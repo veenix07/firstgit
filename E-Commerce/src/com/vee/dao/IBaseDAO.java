@@ -11,4 +11,8 @@ public interface IBaseDAO<T, ID extends Serializable> {
 	public T findByID(int id);
 
 	public List<T> findAll();
+
+	public List<T> findByColumn(String colName, Object value);
+
+	public List<T> findByColumns(String[] colsName, Object[] values);
 }

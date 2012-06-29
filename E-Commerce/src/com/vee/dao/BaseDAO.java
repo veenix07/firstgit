@@ -61,6 +61,7 @@ public abstract class BaseDAO<T, ID extends Serializable> implements
 				"from " + persistenceClass.getName());
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> findByColumn(String colName, Object value) {
 		// TODO Auto-generated method stub

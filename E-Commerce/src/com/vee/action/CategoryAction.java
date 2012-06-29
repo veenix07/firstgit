@@ -5,6 +5,10 @@ import com.vee.model.Category;
 import com.vee.services.CategoryService;
 
 public class CategoryAction extends ActionSupport {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1785728061958588904L;
 	private String category_name;
 	private CategoryService categoryService;
 

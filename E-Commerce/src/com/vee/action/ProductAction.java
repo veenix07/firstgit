@@ -23,16 +23,26 @@ public class ProductAction extends ActionSupport {
 	private List<Category> listCategory;
 	private List<Image> listImages;
 	private Product inputProduct;
+	private Product detailProduct;
 	private String inputImages;
 	private int id_del;
 	private int categoryId;
 	private int prod_id;
+	private int cat_id;
 
 	public ProductAction(ServiceBundle serviceBundle) {
 		// TODO Auto-generated constructor stub
 		productService = serviceBundle.getProductService();
 		imageService = serviceBundle.getImageService();
 		categoryService = serviceBundle.getCategoryService();
+	}
+
+	public int getCat_id() {
+		return cat_id;
+	}
+
+	public void setCat_id(int cat_id) {
+		this.cat_id = cat_id;
 	}
 
 	public int getProd_id() {
@@ -99,16 +109,21 @@ public class ProductAction extends ActionSupport {
 		this.listImages = listImage;
 	}
 
-	public GenericService<Product> getProductService() {
-		return productService;
+	public Product getDetailProduct() {
+		return detailProduct;
 	}
 
-	public void setProductService(GenericService<Product> productService) {
-		this.productService = productService;
+	public void setDetailProduct(Product detailProduct) {
+		this.detailProduct = detailProduct;
 	}
 
 	public String execute() {
-		listProduct = productService.getList();
+		listCategory = categoryService.getList();
+		if (cat_id != 0 && cat_id != -1) {
+			listProduct = productService.getListByColumn("category_id", cat_id);
+		} else {
+			listProduct = productService.getList();
+		}
 		return SUCCESS;
 	}
 
@@ -143,7 +158,15 @@ public class ProductAction extends ActionSupport {
 		Product detail = productService.getEntity(prod_id);
 		if (detail != null) {
 			listImages = imageService.getListByColumn("product_id", prod_id);
+			detailProduct = detail;
 		}
+		return SUCCESS;
+	}
+
+	public String product_sold() {
+		Product detail = productService.getEntity(prod_id);
+		detail.setCategory(categoryService.getEntity(9999));
+		productService.save(detail);
 		return SUCCESS;
 	}
 }

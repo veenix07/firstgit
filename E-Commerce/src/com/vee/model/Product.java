@@ -20,6 +20,7 @@ public class Product {
 	private String productCode;
 	private String productDesc;
 	private double productPrice;
+	private String productInfo;
 	private Category category;
 	private List<Image> images;
 	private Image coverImage;
@@ -80,7 +81,7 @@ public class Product {
 	}
 
 	public void setProductDesc(String productDesc) {
-		this.productDesc = productDesc;
+		this.productDesc = productDesc.replaceAll("\n", "<br/>");
 	}
 
 	public double getProductPrice() {
@@ -89,6 +90,14 @@ public class Product {
 
 	public void setProductPrice(double productPrice) {
 		this.productPrice = productPrice;
+	}
+
+	public String getProductInfo() {
+		return productInfo;
+	}
+
+	public void setProductInfo(String productInfo) {
+		this.productInfo = productInfo;
 	}
 
 }

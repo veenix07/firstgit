@@ -10,34 +10,35 @@
 <body>
 	<div id="header"></div>
 	<div id="global">
-		<div id="navigator">
-			<span style="font-weight: bold;font-size: 1.5em;">&nbsp;Categories</span>
-			<s:iterator value="listCategory">
-				<span valign="middle"><a href="?cat_id=${id }">${categoryName }</a></span>
-			</s:iterator>
-		</div>
+		<jsp:include page="admin_navigator.jsp" />
 		<div id="content">
-			<!-- div align="center">
+			<div align="center">
 				Select Category : <select name="categoryId"
-					onchange="window.open('index.html?cat_id='+this.options[this.selectedIndex].value,'_top')">
+					onchange="window.open('product_edit.html?cat_id='+this.options[this.selectedIndex].value,'_top')">
 					<option value="-1">- Please Select Category -</option>
 					<option value="0">All Categories</option>
 					<s:iterator value="listCategory">
 						<option value="${id }">${categoryName }</option>
 					</s:iterator>
 				</select>
-			</div -->
+			</div>
 			<br />
-			<s:iterator value="listProduct">
-				<div id="item">
-					<a href="show_details.html?prod_id=${id }"><img width="150"
-						height="150" src="<s:property value="coverImage.img_url"/>" /></a>
-					<center>
-						<s:property value="productCode" />
-					</center>
-				</div>
-			</s:iterator>
-			<br />
+			<table cellspacing="10px">
+				<tr>
+					<th>Product Code</th>
+					<th>Update Item</th>
+					<th>Delete Item</th>
+					<th>Sold Out</th>
+				</tr>
+				<s:iterator value="listProduct">
+					<tr>
+						<td><s:property value="productCode" /></td>
+						<td><a href="product_upd.html?prod_id=${id }">Update</a></td>
+						<td><a href="product_del.html?prod_id=${id }">Delete</a></td>
+						<td><a href="product_sold.html?prod_id=${id }">Sold Out</a></td>
+					</tr>
+				</s:iterator>
+			</table>
 			<p align="center" class="clear">${fn:length(listProduct) }
 				product(s) available..</p>
 		</div>

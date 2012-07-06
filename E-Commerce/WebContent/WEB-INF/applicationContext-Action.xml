@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<import resource="applicationContext-Services.xml" />
-	<bean id="productAction" class="com.vee.action.ProductAction">
+	<bean id="productAction" class="com.vee.action.ProductAction" scope="prototype"> 
 		<constructor-arg ref="serviceBundle" />
 	</bean>
 	<bean id="categoryAction" class="com.vee.action.CategoryAction">
-		<property name="categoryService" ref="categoryService" />
+		<constructor-arg ref="serviceBundle" />
 	</bean>
 </beans>

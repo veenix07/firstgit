@@ -8,9 +8,36 @@
 <jsp:include page="/common/header.jsp" />
 </head>
 <body>
-	${fn:length(listImages) }
-	<s:iterator value="listImages">
-		<s:property />
-	</s:iterator>
+	<div id="header"></div>
+	<div id="global">
+		<div id="content">
+			<s:iterator value="listImages">
+				<div id="item_detail">
+					<img src="${img_url }" width="200" height="250">
+				</div>
+			</s:iterator>
+			<div class="clear"></div>
+			<table>
+				<tr>
+					<td>Product Code</td>
+					<td>:</td>
+					<td>${detailProduct.productCode }</td>
+				</tr>
+				<tr>
+					<td>Product Price</td>
+					<td>:</td>
+					<td>${detailProduct.productPrice }</td>
+				</tr>
+				<tr>
+					<td>Product Description</td>
+					<td>:</td>
+					<td>${detailProduct.productDesc }</td>
+				</tr>
+			</table>
+			<center>
+				<a href="index.html">Back to Product List</a>
+			</center>
+		</div>
+	</div>
 </body>
 </html>

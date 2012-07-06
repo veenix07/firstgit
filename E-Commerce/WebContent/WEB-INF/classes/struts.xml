@@ -42,7 +42,7 @@
 		<action name="product_add" class="productAction" method="product_add">
 			<result name="success" type="redirectAction">
 				<param name="actionName">index</param>
-				<param name="namespace">/</param>
+				<param name="namespace">/admin</param>
 			</result>
 		</action>
 		<action name="category_add_form" class="categoryAction" method="category_add_form">
@@ -53,7 +53,23 @@
 		<action name="category_add" class="categoryAction" method="category_add">
 			<result name="success" type="redirectAction">
 				<param name="actionName">index</param>
-				<param name="namespace">/</param>
+				<param name="namespace">/admin</param>
+			</result>
+		</action>
+		<action name="product_edit" class="productAction">
+			<result name="success">
+				/admin/product_edit.jsp
+			</result>
+		</action>
+		<action name="category_post" class="categoryAction" method="getCategoryPost">
+			<result name="success">
+				/admin/category_post.jsp
+			</result>
+		</action>
+		<action name="product_sold" class="productAction" method="product_sold">
+			<result name="success" type="redirectAction">
+				<param name="actionName">product_edit</param>
+				<param name="namespace">/admin</param>
 			</result>
 		</action>
 	</package>

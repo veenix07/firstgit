@@ -12,7 +12,17 @@
 	<div id="global">
 		<jsp:include page="admin_navigator.jsp" />
 		<div id="content">
-			<p>Admin Home Menu</p>
+			<div align="center">
+				Select Category : <select name="categoryId"
+					onchange="window.open('category_post.html?cat_id='+this.options[this.selectedIndex].value,'_top')">
+					<option value="-1">- Please Select Category -</option>
+					<s:iterator value="listCategory">
+						<option value="${id }">${categoryName }</option>
+					</s:iterator>
+				</select>
+			</div>
+			<br />
+			<textarea rows="40" cols="83">${catPost }</textarea>
 		</div>
 	</div>
 </body>

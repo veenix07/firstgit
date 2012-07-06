@@ -8,42 +8,50 @@
 <jsp:include page="/common/header.jsp" />
 </head>
 <body>
-	<jsp:include page="admin_navigator.jsp" />
-	<div id="content">
-		<s:form action="product_add" method="post">
-			<table>
-				<tr>
-					<td>Product Code</td>
-					<td>:</td>
-					<td><s:textfield name="inputProduct.productCode"
-							onkeyup="this.value=this.value.toUpperCase()" /></td>
-				</tr>
-				<tr>
-					<td>Product Category</td>
-					<td>:</td>
-					<td><s:select name="categoryId" list="listCategory"
-							headerKey="-1" headerValue="- Please Select Category -"
-							listKey="id" listValue="categoryName" /></td>
-				</tr>
-				<tr>
-					<td>Product Description</td>
-					<td>:</td>
-					<td><s:textarea name="inputProduct.productDesc" cols="30"
-							rows="5"></s:textarea></td>
-				</tr>
-				<tr>
-					<td>Product Price</td>
-					<td>:</td>
-					<td><s:textfield name="inputProduct.productPrice" /></td>
-				</tr>
-				<tr>
-					<td>Images</td>
-					<td></td>
-					<td><s:textarea name="inputImages" cols="30" rows="5"></s:textarea></td>
-				</tr>
-			</table>
-			<s:submit />
-		</s:form>
+	<div id="header"></div>
+	<div id="global">
+		<jsp:include page="admin_navigator.jsp" />
+		<div id="content">
+			<s:form action="product_add" method="post">
+				<table>
+					<tr>
+						<td>Product Code</td>
+						<td>:</td>
+						<td><s:textfield name="inputProduct.productCode"
+								onkeyup="this.value=this.value.toUpperCase()" /></td>
+					</tr>
+					<tr>
+						<td>Product Category</td>
+						<td>:</td>
+						<td><s:select name="categoryId" list="listCategory"
+								headerKey="-1" headerValue="- Please Select Category -"
+								listKey="id" listValue="categoryName" /></td>
+					</tr>
+					<tr>
+						<td>Product Description</td>
+						<td>:</td>
+						<td><s:textarea name="inputProduct.productDesc" cols="30"
+								rows="5"></s:textarea></td>
+					</tr>
+					<tr>
+						<td>Product Price</td>
+						<td>:</td>
+						<td><s:textfield name="inputProduct.productPrice" /></td>
+					</tr>
+					<tr>
+						<td>Images URL<br /> <small>(Separate Each URL <br />By
+								';')
+						</small></td>
+						<td>:</td>
+						<td><s:textarea name="inputImages" cols="30" rows="5"></s:textarea></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td colspan=2><s:submit /></td>
+					</tr>
+				</table>
+			</s:form>
+		</div>
 	</div>
 </body>
 </html>

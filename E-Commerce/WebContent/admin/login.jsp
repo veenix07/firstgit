@@ -16,10 +16,10 @@
 }
 </style>
 </head>
-<body onload="document.form1.j_username.focus();">
+<body onload="document.f.j_username.focus();">
 	<h3>Login With Username and Password (Custom)</h3>
-	<s:actionmessage/>
-	<s:actionerror/>
+	<s:actionmessage />
+	<s:actionerror />
 	${error }
 	<c:if test="${not empty error }">
 		<div class="errorblock">
@@ -27,7 +27,7 @@
 			${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message }
 		</div>
 	</c:if>
-	<s:form name="form1" action="welcome" method="POST">
+	<form name="f" action="<c:url value='../j_spring_security_check' />" method="POST">
 		<table>
 			<tbody>
 				<tr>
@@ -46,6 +46,6 @@
 				</tr>
 			</tbody>
 		</table>
-	</s:form>
+	</form>
 </body>
 </html>

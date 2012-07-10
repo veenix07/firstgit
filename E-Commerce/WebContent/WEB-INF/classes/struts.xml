@@ -69,15 +69,6 @@
 				<param name="namespace">/admin</param>
 			</result>
 		</action>
-		<action name="welcome" class="loginController">
-			<result name="login">
-				/admin/login.jsp
-			</result>
-			<result name="success" type="redirectAction">
-				<param name="actionName">index</param>
-				<param name="namespace">/admin</param>
-			</result>
-		</action>
 		<action name="login">
 			<result name="success">
 				/admin/login.jsp

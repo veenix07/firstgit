@@ -24,14 +24,11 @@
 				/jsp/product_detail.jsp
 			</result>
 		</action>
-		<!-- <action name="product_delete" class="productAction" method="product_delete"> 
-			<result name="success" type="redirectAction"> <param name="actionName">index</param> 
-			<param name="namespace">/</param> </result> </action> -->
 	</package>
 	<package name="admin" extends="struts-default" namespace="/admin">
 		<action name="index">
 			<result name="success">
-				/admin/index.jsp
+				/admin/home.jsp
 			</result>
 		</action>
 		<action name="product_add_form" class="productAction" method="product_add_form">
@@ -70,6 +67,20 @@
 			<result name="success" type="redirectAction">
 				<param name="actionName">product_edit</param>
 				<param name="namespace">/admin</param>
+			</result>
+		</action>
+		<action name="welcome" class="loginController">
+			<result name="login">
+				/admin/login.jsp
+			</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/admin</param>
+			</result>
+		</action>
+		<action name="login">
+			<result name="success">
+				/admin/login.jsp
 			</result>
 		</action>
 	</package>

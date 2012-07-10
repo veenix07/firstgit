@@ -8,8 +8,6 @@
 <jsp:include page="/common/header.jsp" />
 </head>
 <body>
-	<div id="header"></div>
-	<div id="global">
 		<div id="content">
 			<s:iterator value="listImages">
 				<div id="item_detail">
@@ -38,6 +36,5 @@
 				<a href="index.html">Back to Product List</a>
 			</center>
 		</div>
-	</div>
 </body>
 </html>

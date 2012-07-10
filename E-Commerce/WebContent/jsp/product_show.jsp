@@ -8,8 +8,6 @@
 <jsp:include page="/common/header.jsp" />
 </head>
 <body>
-	<div id="header"></div>
-	<div id="global">
 		<div id="navigator">
 			<span style="font-weight: bold;font-size: 1.5em;">&nbsp;Categories</span>
 			<s:iterator value="listCategory">
@@ -41,6 +39,5 @@
 			<p align="center" class="clear">${fn:length(listProduct) }
 				product(s) available..</p>
 		</div>
-	</div>
 </body>
 </html>

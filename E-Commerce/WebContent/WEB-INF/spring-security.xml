@@ -1,0 +1,28 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<http auto-config="true">
+		<intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+		<form-login login-page="/admin/login.html" default-target-url="/admin/index.html"
+			authentication-failure-url="/admin/login.html" />
+		<logout logout-success-url="/admin/login.html"/>
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="
+		      select username,password, enabled 
+		      from systemuser where username=?"
+				authorities-by-username-query="
+				select username,roleName from systemuser s join user_role u on s.user_id=u.user_id 
+				join role r on u.role_id=r.role_id where s.username =?  " />
+		</authentication-provider>
+	</authentication-manager>
+
+
+</beans:beans>
